@@ -1,35 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
 <head>
     <title>Terremotos no mundo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" href="css/bootstrap.css">   
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body>
+
+    <h1> Terremotos com magnitude maior ou igual a 4.5 nas últimas 24 horas</h1>
+    <div class="container">
+
+        <div class="block" id="block1">Total de eventos</div>
+        <div class="block" id="block2">Maior magnitude</div>
+        <div class="block" id="block3">Local do maior evento</div>
+    </div>
+
+    <div class="container">
+        <div id="mapa"></div>
+        <div class="magnitude" id="magnitude"></div>
+
+    </div>
+    
+    <div id="info"></div>
+    
     <py-config>
-        packages=["folium","pandas"]
+        packages=["folium","pandas","matplotlib"]
     </py-config>
     
+    
+
     <py-script>
         import folium
         import pandas as pd
         from pyodide.http import open_url
-
+        import matplotlib.pyplot as plt
+        import matplotlib.patheffects as path_effects
+        
         # Define o URL base da API
         url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.csv'
-
+        
         # Define os parâmetros da consulta
         df = pd.read_csv(open_url(url))
-
+        
+        #MAPA
         m = folium.Map(location=[-15.77,-47.94],zoom_start=2,tiles='Stamen Terrain')
         grupo_terremotos = folium.map.FeatureGroup()
         for lat, lon,magi in zip(df['latitude'],df['longitude'],df['mag']):
                 grupo_terremotos.add_child(
                 folium.CircleMarker([lat,lon],radius=magi,fill_color='red', fill_opacity=0.5, color='red')
-        )
+                )
         m.add_child(grupo_terremotos)
-        display(m)
+        display(m,target="mapa",append=False)
+
+        #BLOCK1
+        fig = plt.figure(figsize=(2, 2))
+        text=fig.text(0.5, 0.5,str(len(df)), horizontalalignment='center',
+        verticalalignment='center',fontsize=24)
+        text.set_path_effects([path_effects.Normal()])        
+        display(fig,target="block1")
+
+        #BLOCK2
+        fig = plt.figure(figsize=(2, 2))
+        text=fig.text(0.5, 0.5,str(df['mag'].max()), horizontalalignment='center',
+        verticalalignment='center',fontsize=24)
+        text.set_path_effects([path_effects.Normal()])        
+        display(fig,target="block2")
+
+        #BLOCK3
+        fig = plt.figure(figsize=(2, 2))
+        indice_max = df['mag'].idxmax()
+        local_max = df.loc[indice_max, 'place']
+
+        text=fig.text(0.5, 0.5,str(local_max), horizontalalignment='center',
+        verticalalignment='center',fontsize=24)
+        text.set_path_effects([path_effects.Normal()])        
+        display(fig,target="block3")
+
     </py-script>
+
+    
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js.js"></script>
    
 </body>
 </html>
