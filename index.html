@@ -11,26 +11,29 @@
 </head>
 <body>
 
-    <h1> <a target="_blank" href="https://www.amazon.com.br/Sobre-Terra-Hist%25C3%25B3ria-Terremoto-Lisboa/dp/857475255X/ref=sr_1_4?__mk_pt_BR=%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591&amp;crid=1C2BJWUJZ4BU9&amp;keywords=terremoto&amp;qid=1688473977&amp;rnid=18726358011&amp;s=books&amp;sprefix=terremoto%252Caps%252C232&amp;sr=1-4&_encoding=UTF8&tag=geofisico-20&linkCode=ur2&linkId=f90205695f8a981bb006e6aad0098b04&camp=1789&creative=9325">Terremotos</a> com magnitude maior ou igual a 4.5 nas últimas 24 horas</h1>
-    <div class="container">
+    <header>
+        <h1> <a target="_blank" href="https://www.amazon.com.br/Sobre-Terra-Hist%25C3%25B3ria-Terremoto-Lisboa/dp/857475255X/ref=sr_1_4?__mk_pt_BR=%25C3%2585M%25C3%2585%25C5%25BD%25C3%2595%25C3%2591&amp;crid=1C2BJWUJZ4BU9&amp;keywords=terremoto&amp;qid=1688473977&amp;rnid=18726358011&amp;s=books&amp;sprefix=terremoto%252Caps%252C232&amp;sr=1-4&_encoding=UTF8&tag=geofisico-20&linkCode=ur2&linkId=f90205695f8a981bb006e6aad0098b04&camp=1789&creative=9325">Terremotos</a> com magnitude maior ou igual a 4.5 nas últimas 24 horas</h1>
+    </header>
+    
+    <section>
 
         <div class="block" id="block1">Total de eventos</div>
         <div class="block" id="block2">Maior magnitude</div>
         <div class="block" id="block3">Local do maior evento</div>
-    </div>
+    </section>
 
-    <div class="container">
+    <section>
         <div id="mapa"></div>
         <div class="magnitude" id="magnitude">
             <iframe sandbox="allow-popups allow-scripts allow-modals allow-forms allow-same-origin" style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=geofisico-20&language=pt_BR&marketplace=amazon&region=BR&placement=857475255X&asins=857475255X&linkId=e6af9540a908081bcbd5ef21ce6ec225&show_border=true&link_opens_in_new_window=true"></iframe>
         
         </div>
 
-    </div>
+    </section>
     
-    <div id="info">
-        Fonte de dados: USGS: https://www.usgs.gov/programs/earthquake-hazards
-    </div>
+    <footer>
+        Fonte de dados: USGS: <a href='https://www.usgs.gov/programs/earthquake-hazards'>https://www.usgs.gov/programs/earthquake-hazards</a>
+    </footer>
     
     <py-config>
         packages=["folium","pandas","matplotlib"]
