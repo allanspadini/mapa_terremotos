@@ -59,7 +59,8 @@
         grupo_terremotos = folium.map.FeatureGroup()
         for lat, lon,magi in zip(df['latitude'],df['longitude'],df['mag']):
                 grupo_terremotos.add_child(
-                folium.CircleMarker([lat,lon],radius=magi,fill_color='red', fill_opacity=0.5, color='red')
+                folium.CircleMarker([lat,lon],radius=magi,fill_color='red', 
+                fill_opacity=0.5, color='red',popup=folium.Popup(f'Latitude:{lat}\n Longitude:{lon} \n Magnitude:{magi}'))
                 )
         m.add_child(grupo_terremotos)
         display(m,target="mapa",append=False)
