@@ -1,33 +1,5 @@
 /* Estilos para os blocos */
-section {
-    display: flex;
-    justify-content: space-between;
-}
-.block {
-    width: 30%;
-    height: 200px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-
-}
 
 
-.magnitude {
-    width: 30%;
-    height: 500px;
-    margin-bottom: 20px;
-}
-  
-/* Estilo específico para o mapa */
-#mapa {
-    width: 65%;
-    height: 50%;
-    margin-bottom: 100px;
-    margin-left: 10px;
-}
-  
-  /* Estilo específico para as informações abaixo do mapa */
-#info {
-    width: 100%;
-    height: 200px;
-}
+
+
