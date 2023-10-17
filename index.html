@@ -98,7 +98,7 @@
         df = pd.read_csv(open_url(url))
         
         #MAPA
-        m = folium.Map(location=[-15.77,-47.94],zoom_start=2,tiles='Stamen Terrain')
+        m = folium.Map(location=[-15.77,-47.94],zoom_start=2,tiles='cartodbdark_matter')
         grupo_terremotos = folium.map.FeatureGroup()
         for lat, lon,magi in zip(df['latitude'],df['longitude'],df['mag']):
                 grupo_terremotos.add_child(
