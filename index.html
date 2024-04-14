@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css"> 
-    
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 </head>
 <body >
@@ -16,7 +17,7 @@
 
         <nav class="navbar navbar-expand-lg bg-primary text-white">
             <div class="container-fluid">
-              <a class="navbar-brand text-white" href="https://allanspadini.com/">Allan Spadini</a>
+              <a class="navbar-brand text-black" href="https://allanspadini.com/">Allan Spadini</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -110,32 +111,32 @@
 
         #BLOCK1
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#0d6efd')  # Define a cor de fundo como azul
+        fig.set_facecolor('#fff718')  # Define a cor de fundo como azul
 
         text=fig.text(0.5, 0.5,str(len(df)), horizontalalignment='center',
         verticalalignment='center',fontsize=24)
-        text.set_color('white')
+        text.set_color('black')
         text.set_path_effects([path_effects.Normal()])        
         display(fig,target="block1")
 
         #BLOCK2
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#0d6efd')
+        fig.set_facecolor('#fff718')
         text=fig.text(0.5, 0.5,str(df['mag'].max()), horizontalalignment='center',
         verticalalignment='center',fontsize=24)
-        text.set_color('white')
+        text.set_color('black')
         text.set_path_effects([path_effects.Normal()])        
         display(fig,target="block2")
 
         #BLOCK3
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#0d6efd')
+        fig.set_facecolor('#fff718')
         indice_max = df['mag'].idxmax()
         local_max = df.loc[indice_max, 'place']
 
         text=fig.text(0.5, 0.5,str(local_max), horizontalalignment='center',
         verticalalignment='center',fontsize=12,wrap=True)
-        text.set_color('white')
+        text.set_color('black')
         text.set_path_effects([path_effects.Normal()])        
         display(fig,target="block3")
 

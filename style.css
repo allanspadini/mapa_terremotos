@@ -1,5 +1,15 @@
 /* Estilos para os blocos */
 
 
+.card.text-bg-primary {
+    background-color: #fff718 !important; /* Cor amarela */
+}
 
+.bg-primary {
+    background-color: #fff718 !important; /* Cor amarela */
+}
+
+.text-bg-primary {
+    color: black !important;
+}
 
