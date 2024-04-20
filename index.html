@@ -14,18 +14,6 @@
 <body >
 
     <header >
-
-        <nav class="navbar navbar-expand-lg bg-primary text-white">
-            <div class="container-fluid">
-              <a class="navbar-brand text-black" href="https://allanspadini.com/">Allan Spadini</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                
-              </div>
-            </div>
-          </nav>
         
         
     </header>
@@ -111,7 +99,7 @@
 
         #BLOCK1
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#fff718')  # Define a cor de fundo como azul
+        fig.set_facecolor('#737373')  # Define a cor de fundo como azul
 
         text=fig.text(0.5, 0.5,str(len(df)), horizontalalignment='center',
         verticalalignment='center',fontsize=24)
@@ -121,7 +109,7 @@
 
         #BLOCK2
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#fff718')
+        fig.set_facecolor('#737373')
         text=fig.text(0.5, 0.5,str(df['mag'].max()), horizontalalignment='center',
         verticalalignment='center',fontsize=24)
         text.set_color('black')
@@ -130,7 +118,7 @@
 
         #BLOCK3
         fig = plt.figure(figsize=(2, 2))
-        fig.set_facecolor('#fff718')
+        fig.set_facecolor('#737373')
         indice_max = df['mag'].idxmax()
         local_max = df.loc[indice_max, 'place']
 
